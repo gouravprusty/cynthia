@@ -62,16 +62,53 @@ ol {
     font-display: swap;
 }
 
+.loader{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #a3a3a3;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 2s linear;
+}
+.loader_bar{
+    display: block;
+    width: 250px;
+    height: 8px;
+    border: 1px solid #858484;
+    border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+}
+.loader_bar::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #818181;
+    animation: load 2s linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%);
+}
+@keyframes load {
+    0%{left: -100%;}
+    100%{left: 0%;}
+}
+
 .cursor{
     width: 12px;
     height: 12px;
     background-color: #fff;
     border-radius: 50%;
-    z-index: 999;
+    z-index: 1;
     position: absolute;
     opacity: 0;
     transition: transform .5s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.5s;
     mix-blend-mode: difference;
+    pointer-events: none;
 }
 
 .main{

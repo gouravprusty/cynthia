@@ -3,6 +3,11 @@ const scroll = new LocomotiveScroll({
     smooth: true
 });
 
+const loader = document.querySelector(".loader");
+setTimeout(() => {
+    loader.style.top = "-100%";
+}, 2000);
+
 document.addEventListener('DOMContentLoaded', function () {
     new Splide('.splide', {
         type   : 'loop',
