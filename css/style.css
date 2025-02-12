@@ -109,6 +109,16 @@ ol {
     transition: all .5s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.5s;
     mix-blend-mode: difference;
     pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cursor p{
+    color: #000;
+    display: none;
+    font-size: 15px;
+    line-height: 0;
+    text-transform: uppercase;
 }
 
 .main{
